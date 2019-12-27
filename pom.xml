@@ -33,6 +33,14 @@
             <phase>package</phase>
           </execution>
         </executions>
+        <configuration>
+          <relocations>
+            <relocation>
+              <pattern>org.codemc.worldguardwrapper</pattern>
+              <shadedPattern>me.hsgamer.chestcommands_region.worldguardwrapper</shadedPattern>
+            </relocation>
+          </relocations>
+        </configuration>
         <groupId>org.apache.maven.plugins</groupId>
         <version>3.1.0</version>
       </plugin>
@@ -50,6 +58,10 @@
       <id>spigot-repo</id>
       <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
     </repository>
+    <repository>
+      <id>codemc-repo</id>
+      <url>https://repo.codemc.org/repository/maven-public/</url>
+    </repository>
   </repositories>
 
   <dependencies>
@@ -64,6 +76,11 @@
       <groupId>org.spigotmc</groupId>
       <scope>provided</scope>
       <version>${spigot-api.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.codemc.worldguardwrapper</groupId>
+      <artifactId>worldguardwrapper</artifactId>
+      <version>LATEST</version>
     </dependency>
   </dependencies>
 
